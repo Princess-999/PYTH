@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Support PYTH - Donate to empower youth through technology education">
+    <title>Donate - Polokwane Youth Tech Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header (same as other pages) -->
+    <header>
+        <nav>
+            <div class="logo">PYTH</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="#" aria-label="Instagram"><img src="images/instagram.png" alt="Instagram"></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Donation Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Support Our Mission</h1>
+            <p>Your donation helps us empower more youth through technology education.</p>
+        </div>
+    </section>
+
+    <!-- Impact Stats -->
+    <section class="impact-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>Students Trained</p>
+                </div>
+                <div class="stat-item">
+                    <h3>R100</h3>
+                    <p>Sponsors 1 Workshop</p>
+                </div>
+                <div class="stat-item">
+                    <h3>90%</h3>
+                    <p>Success Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Form -->
+    <section class="donation-section">
+        <div class="container">
+            <div class="donation-wrapper">
+                <div class="donation-options">
+                    <h2>Choose Your Impact</h2>
+                    <div class="amount-buttons">
+                        <button class="amount-btn" data-amount="100">R100</button>
+                        <button class="amount-btn" data-amount="250">R250</button>
+                        <button class="amount-btn" data-amount="500">R500</button>
+                        <button class="amount-btn custom">Custom Amount</button>
+                    </div>
+                    <div class="custom-amount-input" style="display: none;">
+                        <input type="number" id="customAmount" placeholder="Enter amount in ZAR" min="10">
+                    </div>
+                    <div class="donation-frequency">
+                        <button class="frequency-btn active" data-frequency="once">One-time</button>
+                        <button class="frequency-btn" data-frequency="monthly">Monthly</button>
+                    </div>
+                </div>
+
+                <!-- PayFast Form -->
+                <form action="https://www.payfast.co.za/eng/process" method="post" class="payfast-form">
+                    <!-- Required PayFast Fields -->
+                    <input type="hidden" name="merchant_id" value="YOUR_MERCHANT_ID">
+                    <input type="hidden" name="merchant_key" value="YOUR_MERCHANT_KEY">
+                    <input type="hidden" name="return_url" value="https://pyth.org.za/thank-you">
+                    <input type="hidden" name="cancel_url" value="https://pyth.org.za/donate">
+                    <input type="hidden" name="notify_url" value="https://pyth.org.za/api/payfast-notify">
+                    
+                    <!-- Transaction Details -->
+                    <input type="hidden" name="amount" id="donationAmount" value="100.00">
+                    <input type="hidden" name="item_name" value="PYTH Donation">
+                    <input type="hidden" name="subscription_type" id="subscriptionType" value="1">
+                    
+                    <!-- Donor Information -->
+                    <div class="form-group">
+                        <label for="name_first">First Name</label>
+                        <input type="text" name="name_first" id="name_first" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name_last">Last Name</label>
+                        <input type="text" name="name_last" id="name_last" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email_address">Email Address</label>
+                        <input type="email" name="email_address" id="email_address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cell_number">Phone Number</label>
+                        <input type="tel" name="cell_number" id="cell_number" pattern="[0-9]{10}" placeholder="0123456789">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary donate-btn">
+                        Donate Now
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Stories -->
+    <section class="impact-stories">
+        <div class="container">
+            <h2>Your Impact</h2>
+            <div class="stories-grid">
+                <div class="story-card">
+                    <img src="images/student1.jpg" alt="Student Success Story">
+                    <h3>Thabo's Journey</h3>
+                    <p>"Thanks to PYTH, I learned web development and now work as a junior developer."</p>
+                </div>
+                <div class="story-card">
+                    <img src="images/student2.jpg" alt="Student Success Story">
+                    <h3>Lerato's Success</h3>
+                    <p>"The coding workshops opened new opportunities for my career in tech."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as other pages) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@pyth.org.za</p>
+                    <p>Phone: +27 15 123 4567</p>
+                    <p>Address: 123 Tech Street, Polokwane</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Polokwane Youth Tech Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const amountButtons = document.querySelectorAll('.amount-btn');
+            const customAmountInput = document.querySelector('.custom-amount-input');
+            const frequencyButtons = document.querySelectorAll('.frequency-btn');
+            const donationAmountInput = document.getElementById('donationAmount');
+            const subscriptionTypeInput = document.getElementById('subscriptionType');
+
+            // Amount Button Handlers
+            amountButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    amountButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    if (button.classList.contains('custom')) {
+                        customAmountInput.style.display = 'block';
+                    } else {
+                        customAmountInput.style.display = 'none';
+                        donationAmountInput.value = button.dataset.amount;
+                    }
+                });
+            });
+
+            // Custom Amount Handler
+            const customAmount = document.getElementById('customAmount');
+            if (customAmount) {
+                customAmount.addEventListener('input', () => {
+                    donationAmountInput.value = customAmount.value;
+                });
+            }
+
+            // Frequency Button Handlers
+            frequencyButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    frequencyButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    // Update subscription type
+                    subscriptionTypeInput.value = button.dataset.frequency === 'monthly' ? '2' : '1';
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

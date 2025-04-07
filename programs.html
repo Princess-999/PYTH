@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PYTH Programs - Coding workshops and digital literacy courses in Polokwane">
+    <title>Programs - Polokwane Youth Tech Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+</head>
+<body>
+    <!-- Header (same as index.html) -->
+    <header>
+        <nav>
+            <div class="logo">PYTH</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="#" aria-label="Instagram"><img src="images/instagram.png" alt="Instagram"></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Programs Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Programs</h1>
+            <p>Discover our range of tech workshops and courses designed to empower the youth of Polokwane.</p>
+        </div>
+    </section>
+
+    <!-- Program Filters -->
+    <section class="program-filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-level="all">All Programs</button>
+                <button class="filter-btn" data-level="beginner">Beginner</button>
+                <button class="filter-btn" data-level="intermediate">Intermediate</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Grid -->
+    <section class="programs-grid">
+        <div class="container">
+            <div class="program-cards">
+                <div class="program-card" data-level="beginner">
+                    <div class="program-image">
+                        <img src="https://via.placeholder.com/400x300.png?text=HTML+Basics" alt="HTML Basics Course">
+                    </div>
+                    <div class="program-content">
+                        <h3>HTML & CSS Basics</h3>
+                        <p>Learn the fundamentals of web development with HTML and CSS.</p>
+                        <ul class="program-details">
+                            <li><strong>Duration:</strong> 4 weeks</li>
+                            <li><strong>Schedule:</strong> Tue & Thu, 14:00-16:00</li>
+                            <li><strong>Level:</strong> Beginner</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Register Now</a>
+                    </div>
+                </div>
+
+                <div class="program-card" data-level="intermediate">
+                    <div class="program-image">
+                        <img src="https://via.placeholder.com/400x300.png?text=JavaScript" alt="JavaScript Course">
+                    </div>
+                    <div class="program-content">
+                        <h3>JavaScript Development</h3>
+                        <p>Master interactive web development with JavaScript.</p>
+                        <ul class="program-details">
+                            <li><strong>Duration:</strong> 8 weeks</li>
+                            <li><strong>Schedule:</strong> Mon & Wed, 16:00-18:00</li>
+                            <li><strong>Level:</strong> Intermediate</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Register Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshop Calendar -->
+    <section class="workshop-calendar">
+        <div class="container">
+            <h2>Upcoming Workshops</h2>
+            <div id="calendar"></div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@pyth.org.za</p>
+                    <p>Phone: +27 15 123 4567</p>
+                    <p>Address: 123 Tech Street, Polokwane</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Polokwane Youth Tech Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize FullCalendar
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek'
+                },
+                events: [
+                    {
+                        title: 'HTML Basics',
+                        start: '2024-03-05',
+                        end: '2024-03-05',
+                        className: 'beginner-event'
+                    },
+                    {
+                        title: 'JavaScript Workshop',
+                        start: '2024-03-12',
+                        end: '2024-03-12',
+                        className: 'intermediate-event'
+                    }
+                    // Add more events as needed
+                ]
+            });
+            calendar.render();
+
+            // Program Filtering
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const programCards = document.querySelectorAll('.program-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const level = button.getAttribute('data-level');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    // Filter programs
+                    programCards.forEach(card => {
+                        if (level === 'all' || card.getAttribute('data-level') === level) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
